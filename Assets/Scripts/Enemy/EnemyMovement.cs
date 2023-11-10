@@ -9,6 +9,9 @@ namespace Movement.Enemy
 		[SerializeField] private MovementData movementData;
 
 		private Movement _movement;
+		private float _actualSpeedModifier = 0;
+
+		public void ModifyActualMovementSpeed(float value) => _actualSpeedModifier += value;
 
 		private void Start()
 		{
@@ -17,7 +20,7 @@ namespace Movement.Enemy
 
 		private void Update()
 		{
-			_movement.Move(new Vector3(0, 0, -1), movementData.MovementSpeed);
+			_movement.Move(new Vector3(0, 0, -1), movementData.MovementSpeed() * (1 - _actualSpeedModifier));
 		}
 	}
 }

@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a28ddee01f4440647a03c658b89b2286, type: 3}
-  m_Name: Cube MovementData
+  m_Script: {fileID: 11500000, guid: 987afce2bc134305beeaf2c42b2436cc, type: 3}
+  m_Name: BigSphere MovementData
   m_EditorClassIdentifier: 
-  movementSpeed: 5
+  simpleMovementData: {fileID: 11400000, guid: fe793d5bf541d0f44863019b9865eb2b, type: 2}
+  movementSpeedRatio: 100
