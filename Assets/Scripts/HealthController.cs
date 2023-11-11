@@ -10,6 +10,9 @@ public class HealthController : MonoBehaviour
 	private int _health;
 
 	public int ActualHealth => _health;
+
+	public int MaxHealth => initHealth;
+
 	public event Action<int> HealthChanged;
 
 	public int ChangeHealth(int value)
@@ -21,6 +24,6 @@ public class HealthController : MonoBehaviour
 
 	private void Start()
 	{
-		_health = initHealth;
+		_health = MaxHealth;
 	}
 }
