@@ -8,6 +8,8 @@ public class BulletExplosiveEffect : MonoBehaviour, IExplosiveEffect
 	{
 		Debug.Log("BOOM!");
 		//Add points to manager
+		GameManager.Instance.PointsManager.AddPoint(10);
 		//Add exp for player
+		GameManager.Instance.ExpManager.AddPoint(30);
 	}
 }

@@ -13,14 +13,22 @@ public class PlayerWeaponController : MonoBehaviour
 	private float _timerFromLastShoot;
 	private bool IsReadyToShoot => _timerFromLastShoot >= cooledDownTime;
 
+	private PlayerLevelData currentPlayerLevelData;
 
 	private void Start()
 	{
 		_timerFromLastShoot = cooledDownTime;
 
+		GameManager.Instance.ExpManager.LevelUp += HandleNewPlayerLevelData;
+
 		var inputProvider = GetComponent<IInputProvider>();
 		inputProvider.InputChanged += TryFireSimpleBullet;
 		inputProvider.InputChanged += FireSpecialBullet;
+	}
+
+	private void HandleNewPlayerLevelData(PlayerLevelData newLevelData)
+	{
+		currentPlayerLevelData = newLevelData;
 	}
 
 	private void TryFireSimpleBullet(InputVariables input)
