@@ -4,54 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-public abstract class PointsBase
-{
-	private int _points;
-	public event Action<int> PointsChanged;
-
-	public void AddPoint(int value)
-	{
-		_points += value;
-		PointsChanged?.Invoke(_points);
-	}
-}
-
-public sealed class PointsManager : PointsBase
-{
-	public PointsManager()
-	{
-	}
-}
-
-public sealed class ExpManager : PointsBase
-{
-	private PlayerLevelData _currentLevel;
-	private List<PlayerLevelData> _levelList;
-
-	public event Action<PlayerLevelData> LevelUp;
-
-	public ExpManager(List<PlayerLevelData> playerLevelDatas)
-	{
-		_levelList = playerLevelDatas;
-		_currentLevel = _levelList[0];
-
-		PointsChanged += TryLevelUp;
-	}
-
-	public void TryLevelUp(int value)
-	{
-		//If value is bigger than x lvlup
-		if (value < _currentLevel.RequireExperienceForNextLevel)
-			return;
-
-		var nextLevelIndex = _levelList.IndexOf(_currentLevel) + 1;
-		_currentLevel = _levelList[nextLevelIndex];
-
-		Debug.Log("!!!LEVEL UP!!!");
-		LevelUp?.Invoke(_currentLevel);
-	}
-}
-
 public class GameManager : MonoBehaviour
 {
 	[SerializeField] private HealthController playerHealthController;
@@ -67,7 +19,6 @@ public class GameManager : MonoBehaviour
 	public HealthController PlayerHealthController => playerHealthController;
 
 	public event Action EndGame;
-
 
 	private void Awake()
 	{

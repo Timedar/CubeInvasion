@@ -87,6 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d655beba5774afca405c35d4261ac32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 1
   cubeDeathController: {fileID: 1928152793898640893}
 --- !u!1 &1528205364699732008
 GameObject:
