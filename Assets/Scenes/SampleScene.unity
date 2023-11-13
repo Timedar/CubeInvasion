@@ -199,6 +199,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252465401}
   m_CullTransparentMesh: 1
+--- !u!65 &255196224 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 1183489673122264295, guid: ebce47d91ae54c54dbeb966a5e4725b3, type: 3}
+  m_PrefabInstance: {fileID: 5035378747569592827}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &258515203
 GameObject:
   m_ObjectHideFlags: 0
@@ -1971,7 +1976,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Special bullet coldown:Ready!
+  m_text: 'Special bullet coldown:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2667,6 +2672,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4934596297708128587, guid: 00ae86da59a0a1246a20a91850c588b9, type: 3}
+      propertyPath: boundCollider
+      value: 
+      objectReference: {fileID: 255196224}
     - target: {fileID: 6787311462600984665, guid: 00ae86da59a0a1246a20a91850c588b9, type: 3}
       propertyPath: bulletPool
       value: 

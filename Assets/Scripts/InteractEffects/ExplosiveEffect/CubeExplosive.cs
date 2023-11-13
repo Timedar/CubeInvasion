@@ -3,16 +3,12 @@ using UnityEngine;
 
 namespace DefaultNamespace
 {
-	public class CubeExplosive : MonoBehaviour, IExplosive
+	public class CubeExplosive : MonoBehaviour, IRedLineExplosive
 	{
-		[SerializeField] private int damage;
 		[SerializeField] private DeathController cubeDeathController;
 
 		public void ExecuteEffect()
 		{
-			//Reduce player health
-			GameManager.Instance.PlayerHealthController.ChangeHealth(-damage);
-			//Add others cubes 10% of health
 			var selectedEnemies =
 				EnemyFactory.SpawnedEnemies.Where(x => x.EnemyType is EnemyType.Cube or EnemyType.BigCube);
 

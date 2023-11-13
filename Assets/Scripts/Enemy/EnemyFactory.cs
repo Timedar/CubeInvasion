@@ -81,8 +81,19 @@ public class EnemyFactory : MonoBehaviour
 
 	private void HandleEnemyDeath(EnemyComponents spawnedEnemy)
 	{
+		TryAddPointsAndExpForEnemy(spawnedEnemy);
+
 		SpawnedEnemies.Remove(spawnedEnemy);
 		spawnedEnemy.DeathController.Destory();
+	}
+
+	private static void TryAddPointsAndExpForEnemy(EnemyComponents spawnedEnemy)
+	{
+		if (spawnedEnemy.HealthController.ActualHealth <= 0)
+		{
+			GameManager.Instance.ExpManager.AddPoint(spawnedEnemy.ExpForEnemy);
+			GameManager.Instance.PointsManager.AddPoint(spawnedEnemy.PointsForEnemy);
+		}
 	}
 
 	private void Update()

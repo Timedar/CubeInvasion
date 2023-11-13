@@ -40,6 +40,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1454910875617785486, guid: 6fba5a4cb42442e4fb5dd724800d9c6c, type: 3}
+      propertyPath: initHealth
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2558126848569360759, guid: 6fba5a4cb42442e4fb5dd724800d9c6c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -87,6 +91,18 @@ PrefabInstance:
     - target: {fileID: 3130623073853437119, guid: 6fba5a4cb42442e4fb5dd724800d9c6c, type: 3}
       propertyPath: enemyType
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130623073853437119, guid: 6fba5a4cb42442e4fb5dd724800d9c6c, type: 3}
+      propertyPath: expForEnemy
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130623073853437119, guid: 6fba5a4cb42442e4fb5dd724800d9c6c, type: 3}
+      propertyPath: pointsForEnemy
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4019489897760602077, guid: 6fba5a4cb42442e4fb5dd724800d9c6c, type: 3}
+      propertyPath: damage
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5951882734530865979, guid: 6fba5a4cb42442e4fb5dd724800d9c6c, type: 3}
       propertyPath: m_Name

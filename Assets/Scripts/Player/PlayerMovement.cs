@@ -7,6 +7,7 @@ namespace Player
 	public class PlayerMovement : MonoBehaviour
 	{
 		[SerializeField] private MovementData movementData;
+		[SerializeField] private Collider boundCollider;
 
 		private Movement.Movement _movement;
 
@@ -21,6 +22,8 @@ namespace Player
 		private void HandleMovement(InputVariables input)
 		{
 			_movement.Move(new Vector3(input.HorizontalInput, 0, 0), movementData.MovementSpeed());
+			var xBounded = Mathf.Clamp(transform.position.x, boundCollider.bounds.min.x, boundCollider.bounds.max.x);
+			transform.position = new Vector3(xBounded, transform.position.y, transform.position.z);
 		}
 	}
 }

@@ -201,6 +201,7 @@ GameObject:
   - component: {fileID: 3938110684450574865}
   - component: {fileID: 2286409774658954112}
   - component: {fileID: 8968582685342090154}
+  - component: {fileID: 4019489897760602077}
   m_Layer: 0
   m_Name: EnemySphere
   m_TagString: Untagged
@@ -239,6 +240,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType: 2
+  expForEnemy: 3
+  pointsForEnemy: 7
 --- !u!114 &8348515857614295941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,6 +318,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   additionalSpeedAfterDamagePercentage: 10
+--- !u!114 &4019489897760602077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5951882734530865979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1916d7e349e79743b70497d4f7c2c57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  cubeDeathController: {fileID: 1003260644650707710}
 --- !u!1 &8771510902363144548
 GameObject:
   m_ObjectHideFlags: 0

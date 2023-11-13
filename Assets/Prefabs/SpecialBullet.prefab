@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c5bbfd9eca505e45a77a884cf55e5cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletParameters: {fileID: 0}
+  bulletParameters: {fileID: 8822398629432548618}
 --- !u!54 &5926915494171772161
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -288,7 +288,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4404291733739986114
 Transform:
   m_ObjectHideFlags: 0

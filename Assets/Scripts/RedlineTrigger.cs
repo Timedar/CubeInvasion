@@ -7,8 +7,8 @@ public class RedlineTrigger : MonoBehaviour
 {
 	private void OnTriggerEnter(Collider other)
 	{
-		Debug.Log($"Detected: {other.name}");
-		if (other.transform.root.TryGetComponent(out IExplosive enemyExplosiveEffect))
-			enemyExplosiveEffect.ExecuteEffect();
+		if (other.transform.root.TryGetComponent(out EnemyComponents enemyComponents))
+			foreach (var readLineExplosive in enemyComponents?.RedLineExplosives)
+				readLineExplosive.ExecuteEffect();
 	}
 }

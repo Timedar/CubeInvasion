@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 924698379449983976}
   - component: {fileID: 7236311264213514401}
   - component: {fileID: 8281595607183547991}
+  - component: {fileID: 3460535909621901644}
   m_Layer: 0
   m_Name: EnemyCube
   m_TagString: Untagged
@@ -53,6 +54,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType: 0
+  expForEnemy: 1
+  pointsForEnemy: 5
 --- !u!114 &5554452386683791991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,7 +118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d655beba5774afca405c35d4261ac32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
   cubeDeathController: {fileID: 1928152793898640893}
 --- !u!114 &8281595607183547991
 MonoBehaviour:
@@ -130,6 +132,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 6960428216246862646}
+--- !u!114 &3460535909621901644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390867042871670678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1916d7e349e79743b70497d4f7c2c57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  cubeDeathController: {fileID: 1928152793898640893}
 --- !u!1 &1528205364699732008
 GameObject:
   m_ObjectHideFlags: 0
