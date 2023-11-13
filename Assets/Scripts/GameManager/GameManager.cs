@@ -46,4 +46,10 @@ public class GameManager : MonoBehaviour
 	}
 
 	private static void PauseGame() => Time.timeScale = 0;
+	private static void ResumeGame() => Time.timeScale = 1;
+
+	private void OnDisable()
+	{
+		ResumeGame();
+	}
 }

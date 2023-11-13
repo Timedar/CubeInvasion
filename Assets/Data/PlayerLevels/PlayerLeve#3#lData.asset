@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a833cd9557ae382448699fbfb08607de, type: 3}
   m_Name: PlayerLeve#3#lData
   m_EditorClassIdentifier: 
-  simpleBulletDamage: 30
+  simpleBulletDamage: 20
   specialBulletCooldown: 1
+  requireExperienceForNextLevel: 500
