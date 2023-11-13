@@ -8,6 +8,7 @@ using UnityEngine.Serialization;
 public class PlayerWeaponController : MonoBehaviour
 {
 	[SerializeField] private BulletPool bulletPool;
+	[SerializeField] private BulletPool specialBulletPool;
 	[SerializeField, Range(0, 2)] private float cooledDownTime = 1;
 
 	private float _timerFromLastShoot;
@@ -42,7 +43,11 @@ public class PlayerWeaponController : MonoBehaviour
 
 	private void FireSpecialBullet(InputVariables input)
 	{
-		// if (input.SpecialAttackInput && IsReadyToShoot)
+		if (input.AttackInput && IsReadyToShoot)
+		{
+			bulletPool.TakeBulletAndActivate();
+			_timerFromLastShoot = 0;
+		}
 	}
 
 	private void Update()

@@ -1,14 +1,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class BulletPool : MonoBehaviour
 {
 	[SerializeField] private Transform bulletOriginSpawnPoint;
 	[SerializeField] private Vector3 offsetSpawnPoint;
 
-	[SerializeField] private BulletMovement simpleBullet;
-	[SerializeField] private Transform simpleBulletPoolContainer;
+	[SerializeField] private BulletMovement bullet;
 
 	private List<BulletMovement> _simpleBulletPool = new List<BulletMovement>();
 
@@ -18,7 +18,7 @@ public class BulletPool : MonoBehaviour
 
 		if (bullet is null)
 		{
-			bullet = Instantiate(simpleBullet, simpleBulletPoolContainer);
+			bullet = Instantiate(this.bullet, transform);
 			_simpleBulletPool.Add(bullet);
 		}
 
