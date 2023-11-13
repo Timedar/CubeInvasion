@@ -11,6 +11,7 @@ namespace Movement.Enemy
 		private Movement _movement;
 		private float _actualSpeedModifier = 0;
 
+		public float Speed => movementData.MovementSpeed() * (1 + _actualSpeedModifier);
 		public void ModifyActualMovementSpeed(float value) => _actualSpeedModifier += value;
 
 		private void Start()
@@ -20,7 +21,7 @@ namespace Movement.Enemy
 
 		private void Update()
 		{
-			_movement.Move(new Vector3(0, 0, -1), movementData.MovementSpeed() * (1 - _actualSpeedModifier));
+			_movement.Move(new Vector3(0, 0, -1), Speed);
 		}
 	}
 }

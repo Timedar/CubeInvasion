@@ -6,27 +6,25 @@ using UnityEngine;
 
 public class BulletTrigger : MonoBehaviour
 {
-	private IExplosiveEffect _explosiveEffect;
+	private int damage = 10;
+	private IExplosive _explosive;
 
 	private void Start()
 	{
 		var root = transform.parent;
 
-		_explosiveEffect = root.GetComponent<IExplosiveEffect>();
+		_explosive = root.GetComponent<IExplosive>();
 	}
 
 	private void OnTriggerEnter(Collider other)
 	{
 		Debug.Log($"Bullet Detected: {other.name}");
-		if (other.transform.root.TryGetComponent(out HealthController healthController))
+		transform.parent.gameObject.SetActive(false);
+
+		if (other.transform.root.TryGetComponent(out EnemyComponents enemyComponents))
 		{
-			//Reduce enemy health by predefine damage
-			var enemyHealth = healthController.ChangeHealth(-10);
-
-			if (enemyHealth <= 0)
-				_explosiveEffect.Explode();
-
-			transform.parent.gameObject.SetActive(false);
+			foreach (var receiveDamage in enemyComponents.ComponentsReceiveDamage)
+				receiveDamage.OnDamageReceive(damage);
 		}
 	}
 }

@@ -15,14 +15,14 @@ MonoBehaviour:
   spawningRate: 1
   enemySpawnParametersList:
   - name: Small Cube
-    spawnChance: 50
-    enemyPrefab: {fileID: 5554452386683791991, guid: e0c63f9527987594fb3810495652c648, type: 3}
+    spawnChance: 0
+    enemyPrefab: {fileID: 6010591156316352929, guid: e0c63f9527987594fb3810495652c648, type: 3}
   - name: Big Cube
-    spawnChance: 50
-    enemyPrefab: {fileID: 4658813603381349835, guid: 3b0c2019ba4b1204585e22e9400860ca, type: 3}
+    spawnChance: 0
+    enemyPrefab: {fileID: 6835311405198022173, guid: 3b0c2019ba4b1204585e22e9400860ca, type: 3}
   - name: Small Sphere
-    spawnChance: 0
-    enemyPrefab: {fileID: 0}
+    spawnChance: 50
+    enemyPrefab: {fileID: 3130623073853437119, guid: 6fba5a4cb42442e4fb5dd724800d9c6c, type: 3}
   - name: Big Sphere
-    spawnChance: 0
-    enemyPrefab: {fileID: 0}
+    spawnChance: 50
+    enemyPrefab: {fileID: 5830553989363954014, guid: 148668c2eb1bb944a97ef4ededbea8d4, type: 3}

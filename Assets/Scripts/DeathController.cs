@@ -5,6 +5,8 @@ namespace DefaultNamespace
 {
 	public class DeathController : MonoBehaviour
 	{
+		public event Action MarkedAsDead;
+
 		private void Start()
 		{
 			if (TryGetComponent(out HealthController healthController))
@@ -12,12 +14,17 @@ namespace DefaultNamespace
 				healthController.HealthChanged += (value) =>
 				{
 					if (value <= 0)
-						DeathExecution();
+						MarkAsDead();
 				};
 			}
 		}
 
-		public void DeathExecution()
+		public void MarkAsDead()
+		{
+			MarkedAsDead?.Invoke();
+		}
+
+		public void Destory()
 		{
 			Destroy(gameObject);
 		}

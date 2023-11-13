@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c84f0e30e8460f9db33f38dcfbfdba, type: 3}
   m_Name: Cube MovementData
   m_EditorClassIdentifier: 
-  movementSpeed: 10
+  movementSpeed: 1

@@ -76,12 +76,50 @@ PrefabInstance:
       propertyPath: movementData
       value: 
       objectReference: {fileID: 11400000, guid: b95ebc25d2df4e4449551a197ebb5c85, type: 2}
+    - target: {fileID: 6010591156316352929, guid: e0c63f9527987594fb3810495652c648, type: 3}
+      propertyPath: enemyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7236311264213514401, guid: e0c63f9527987594fb3810495652c648, type: 3}
       propertyPath: damage
       value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7236311264213514401, guid: e0c63f9527987594fb3810495652c648, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1390867042871670678, guid: e0c63f9527987594fb3810495652c648, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 644495948649900945}
   m_SourcePrefab: {fileID: 100100000, guid: e0c63f9527987594fb3810495652c648, type: 3}
+--- !u!114 &1688888951837246017 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1928152793898640893, guid: e0c63f9527987594fb3810495652c648, type: 3}
+  m_PrefabInstance: {fileID: 986868094525122492}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2233597920299438122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec96d14928ce46c8b3d4838ae9a05d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &2233597920299438122 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1390867042871670678, guid: e0c63f9527987594fb3810495652c648, type: 3}
+  m_PrefabInstance: {fileID: 986868094525122492}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &644495948649900945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2233597920299438122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b38c7551af15cf04cbd324dc12e11a6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
+  cubeDeathController: {fileID: 1688888951837246017}

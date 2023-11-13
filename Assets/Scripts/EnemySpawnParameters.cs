@@ -7,5 +7,5 @@ public struct EnemySpawnParameters
 {
 	public string name;
 	[Range(0, 100)] public float spawnChance;
-	public EnemyMovement enemyPrefab;
+	public EnemyComponents enemyPrefab;
 }

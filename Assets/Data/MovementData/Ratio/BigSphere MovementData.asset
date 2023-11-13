@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: BigSphere MovementData
   m_EditorClassIdentifier: 
   simpleMovementData: {fileID: 11400000, guid: fe793d5bf541d0f44863019b9865eb2b, type: 2}
-  movementSpeedRatio: 100
+  movementSpeedRatio: 150

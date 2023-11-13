@@ -9,10 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4723149227477176660}
+  - component: {fileID: 6010591156316352929}
   - component: {fileID: 5554452386683791991}
   - component: {fileID: 5257879902643384082}
   - component: {fileID: 1928152793898640893}
+  - component: {fileID: 924698379449983976}
   - component: {fileID: 7236311264213514401}
+  - component: {fileID: 8281595607183547991}
   m_Layer: 0
   m_Name: EnemyCube
   m_TagString: Untagged
@@ -37,6 +40,19 @@ Transform:
   - {fileID: 185348172419815321}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6010591156316352929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390867042871670678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57889d4d81eba714986c6525f6389c85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyType: 0
 --- !u!114 &5554452386683791991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,6 +91,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec96d14928ce46c8b3d4838ae9a05d74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &924698379449983976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390867042871670678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dc72198efaf1ae47bcd6b391180b76d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7236311264213514401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,6 +117,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   cubeDeathController: {fileID: 1928152793898640893}
+--- !u!114 &8281595607183547991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390867042871670678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51f5ccafd94cbe34d905ac6e9ab35ae1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderer: {fileID: 6960428216246862646}
 --- !u!1 &1528205364699732008
 GameObject:
   m_ObjectHideFlags: 0
