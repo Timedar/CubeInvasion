@@ -7,14 +7,13 @@ using UnityEngine.Serialization;
 
 public class PlayerWeaponController : MonoBehaviour
 {
-	[SerializeField] private BulletPool bulletPool;
-	[SerializeField] private BulletPool specialBulletPool;
-	[SerializeField, Range(0, 2)] private float cooledDownTime = 1;
+	[SerializeField] protected BulletPool bulletPool;
+	[SerializeField, Range(0, 2)] protected float cooledDownTime = 1;
 
-	private float _timerFromLastShoot;
-	private bool IsReadyToShoot => _timerFromLastShoot >= cooledDownTime;
+	protected float _timerFromLastShoot;
+	public bool IsReadyToShoot => _timerFromLastShoot >= cooledDownTime;
 
-	private PlayerLevelData currentPlayerLevelData;
+	public event Action<float> CooledownTimeChanged;
 
 	private void Start()
 	{
@@ -23,25 +22,14 @@ public class PlayerWeaponController : MonoBehaviour
 		GameManager.Instance.ExpManager.LevelUp += HandleNewPlayerLevelData;
 
 		var inputProvider = GetComponent<IInputProvider>();
-		inputProvider.InputChanged += TryFireSimpleBullet;
-		inputProvider.InputChanged += FireSpecialBullet;
+		inputProvider.InputChanged += TryFire;
 	}
 
-	private void HandleNewPlayerLevelData(PlayerLevelData newLevelData)
+	protected virtual void HandleNewPlayerLevelData(PlayerLevelData newLevelData)
 	{
-		currentPlayerLevelData = newLevelData;
 	}
 
-	private void TryFireSimpleBullet(InputVariables input)
-	{
-		if (input.AttackInput && IsReadyToShoot)
-		{
-			bulletPool.TakeBulletAndActivate();
-			_timerFromLastShoot = 0;
-		}
-	}
-
-	private void FireSpecialBullet(InputVariables input)
+	protected virtual void TryFire(InputVariables input)
 	{
 		if (input.AttackInput && IsReadyToShoot)
 		{
@@ -52,7 +40,10 @@ public class PlayerWeaponController : MonoBehaviour
 
 	private void Update()
 	{
-		if (!IsReadyToShoot)
-			_timerFromLastShoot += Time.deltaTime;
+		if (IsReadyToShoot)
+			return;
+
+		_timerFromLastShoot += Time.deltaTime;
+		CooledownTimeChanged?.Invoke(cooledDownTime - _timerFromLastShoot);
 	}
 }
