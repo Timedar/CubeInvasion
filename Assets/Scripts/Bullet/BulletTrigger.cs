@@ -6,25 +6,15 @@ using UnityEngine;
 
 public class BulletTrigger : MonoBehaviour
 {
-	private int damage = 10;
-	private IExplosive _explosive;
-
-	private void Start()
-	{
-		var root = transform.parent;
-
-		_explosive = root.GetComponent<IExplosive>();
-	}
+	[SerializeField] private BulletParameters bulletParameters;
 
 	private void OnTriggerEnter(Collider other)
 	{
-		Debug.Log($"Bullet Detected: {other.name}");
-		transform.parent.gameObject.SetActive(false);
-
 		if (other.transform.root.TryGetComponent(out EnemyComponents enemyComponents))
 		{
+			transform.parent.gameObject.SetActive(false);
 			foreach (var receiveDamage in enemyComponents.ComponentsReceiveDamage)
-				receiveDamage.OnDamageReceive(damage);
+				receiveDamage.OnDamageReceive(bulletParameters.Damage);
 		}
 	}
 }

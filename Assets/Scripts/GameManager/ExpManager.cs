@@ -7,6 +7,7 @@ public sealed class ExpManager : PointsBase
 	private PlayerLevelData _currentLevel;
 	private List<PlayerLevelData> _levelList;
 
+	public PlayerLevelData CurrentLevel => _currentLevel;
 	public event Action<PlayerLevelData> LevelUp;
 
 	public ExpManager(List<PlayerLevelData> playerLevelDatas)
@@ -19,12 +20,12 @@ public sealed class ExpManager : PointsBase
 
 	public void TryLevelUp(int value)
 	{
-		if (value < _currentLevel.RequireExperienceForNextLevel)
+		if (value < CurrentLevel.RequireExperienceForNextLevel)
 			return;
 
-		var nextLevelIndex = _levelList.IndexOf(_currentLevel) + 1;
+		var nextLevelIndex = _levelList.IndexOf(CurrentLevel) + 1;
 
-		if (nextLevelIndex > _levelList.Count -1)
+		if (nextLevelIndex > _levelList.Count - 1)
 		{
 			Debug.Log("Player reach max level!");
 			return;
@@ -33,6 +34,6 @@ public sealed class ExpManager : PointsBase
 		_currentLevel = _levelList[nextLevelIndex];
 
 
-		LevelUp?.Invoke(_currentLevel);
+		LevelUp?.Invoke(CurrentLevel);
 	}
 }

@@ -1700,8 +1700,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3790566b08e42074dbe9afe5dcd843c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weaponController: {fileID: 1722132140}
-  _textMeshProUGUI: {fileID: 1635600145}
+  weaponController: {fileID: 1722132140}
+  textMeshProUGUI: {fileID: 1635600145}
 --- !u!1 &1617905532
 GameObject:
   m_ObjectHideFlags: 0
@@ -1971,7 +1971,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Special bullet coldown:'
+  m_text: Special bullet coldown:Ready!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2675,6 +2675,10 @@ PrefabInstance:
       propertyPath: bulletPool
       value: 
       objectReference: {fileID: 1470153994}
+    - target: {fileID: 8064515055412978408, guid: 00ae86da59a0a1246a20a91850c588b9, type: 3}
+      propertyPath: cooledDown
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 8473903655367732184, guid: 00ae86da59a0a1246a20a91850c588b9, type: 3}
       propertyPath: m_Name
       value: Player

@@ -12,7 +12,7 @@ public class BulletPool : MonoBehaviour
 
 	private List<BulletMovement> _simpleBulletPool = new List<BulletMovement>();
 
-	public void TakeBulletAndActivate()
+	public GameObject TakeBulletAndActivate()
 	{
 		var bullet = _simpleBulletPool.FirstOrDefault(x => !x.gameObject.activeSelf);
 
@@ -23,6 +23,7 @@ public class BulletPool : MonoBehaviour
 		}
 
 		bullet.Activate(bulletOriginSpawnPoint.position + offsetSpawnPoint);
+		return bullet.gameObject;
 	}
 
 	private void OnDrawGizmosSelected()

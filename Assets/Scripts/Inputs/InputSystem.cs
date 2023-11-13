@@ -11,7 +11,7 @@ namespace Inputs
 		{
 			_inputVariables.HorizontalInput = Input.GetAxis("Horizontal");
 			_inputVariables.AttackInput = Input.GetButton("Fire1");
-			_inputVariables.SpecialAttackInput = Input.GetButton("Fire2");
+			_inputVariables.SpecialAttackInput = Input.GetButtonDown("Fire2");
 
 			InputChanged?.Invoke(_inputVariables);
 		}

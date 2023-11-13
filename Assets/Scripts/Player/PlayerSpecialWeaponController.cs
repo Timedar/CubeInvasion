@@ -1,21 +1,44 @@
 using Inputs;
+using Unity.VisualScripting;
+using UnityEngine;
 
 namespace Player
 {
-	public class PlayerSpecialWeaponController : PlayerWeaponController
+	public sealed class PlayerSpecialWeaponController : WeaponControllerBase
 	{
-		protected override void HandleNewPlayerLevelData(PlayerLevelData newLevelData)
+		private GameObject _cashedBullet;
+
+		protected override void Start()
 		{
-			cooledDownTime = newLevelData.SpecialBulletCooldown;
+			base.Start();
+			
+			TimerFromLastShoot = GameManager.Instance.ExpManager.CurrentLevel.SpecialBulletCooldown;
+			HandleNewPlayerLevelData(GameManager.Instance.ExpManager.CurrentLevel);
+			GameManager.Instance.ExpManager.LevelUp += HandleNewPlayerLevelData;
+		}
+
+		private void HandleNewPlayerLevelData(PlayerLevelData newLevelData)
+		{
+			BaseCooledDownTime = newLevelData.SpecialBulletCooldown;
 		}
 
 		protected override void TryFire(InputVariables input)
 		{
-			if (input.SpecialAttackInput && IsReadyToShoot)
+			if (_cashedBullet != null && _cashedBullet.activeSelf && input.SpecialAttackInput)
 			{
-				bulletPool.TakeBulletAndActivate();
-				_timerFromLastShoot = 0;
+				DetonateBullet();
 			}
+			else if (input.SpecialAttackInput && IsReadyToShoot)
+			{
+				_cashedBullet = bulletPool.TakeBulletAndActivate();
+				TimerFromLastShoot = 0;
+			}
+		}
+
+		private void DetonateBullet()
+		{
+			if (_cashedBullet.TryGetComponent(out IExplosive explosive))
+				explosive.ExecuteEffect();
 		}
 	}
 }
